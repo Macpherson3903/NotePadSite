@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF8">
+		<meta name="viewport" content="width=device-width. initial-scale=1.0">
+		<title>Building a Site with NotePad</title>
+
+		<style>
+  			.bottom-line {
+    				width: 100%;
+    				height: 2px;
+    				background-color: black;
+    				margin: 3px auto 0;
+  			}
+
+  		  	#animated-img {
+    				opacity: 0;
+   				transform: translateY(40px);
+    				transition: opacity 100ms ease, transform 100ms ease;
+    				display: block;
+    				margin: 0 auto;
+  			}
+
+  			#animated-img.show {
+    				opacity: 1;
+    				transform: translateY(0);
+  			}
+			
+			@keyframes bounce {
+    				0%, 100%   { transform: translateY(0); }
+    				50%        { transform: translateY(-20px); }
+  			}
+
+			#animated-img.bounce {
+    				animation: bounce 1.2s infinite ease-in-out;
+  			}
+
+			#animated-about.bounce {
+				animation: bounce 1.2s infinite ease-in-out;
+			}
+
+			.sideline {
+				height: 600px;
+				background-color: #fcfcfc;
+				width: 2px;
+			}
+
+			#animated-about {
+				opacity: 0;
+				transform: translateX(-40px);
+				transition: opacity 100ms ease, transform 100ms ease;
+				display: flex;
+				margin: 0 auto;
+			}
+	
+			#animated-about.show {
+				opacity: 1;
+				transform: translateX(0);
+			}
+
+			@media screen  and (max-width:768px) {
+				section {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+				}
+
+				img {
+					height: 200px;
+				}				
+
+				h1, h2 {
+					font-size: 10px;
+				}
+			}
+		</style>
+
+	</head>
+
+	<body style="padding:0; margin:0; box-sizing:border-box; width:100%; height:100vh;">
+
+		<div style="width:100%; background:linear-gradient(45deg, #006494, #247BA0);">
+			<nav style="padding:20px; display:flex; align-items:center; justify-content:space-between; width:80%; margin:0 auto;">
+				<li style="list-style:none; font-weight:bold; font-size:24px;"><a href="/" style="text-decoration:none; color:#13293D;">Home</a></li>
+				<li style="list-style:none;"><a href="/" style="text-decoration:none; padding: 10px; background-color:#1B98E0; color:#E8F1F2; border-radius:24px; border:none;">Sign Up!</a></li>
+			</nav>
+		</div>
+
+
+	<section style="background:linear-gradient(45deg, #247BA0, #006494); padding: 20px; height:87.5vh; display:flex; align-items:center; justify-content:center;">
+		<main style="display:flex; align-items:center; justify-content:space-between; margin:0 auto; width:80%;">
+			<div style="width:50%;">
+				<h1 style="color:#fff; font-size:4rem; font-weight:bold;">Hello, A professional Web Designer Designed This Website Using Just Notepad</h1>
+				<p style="margin-top:1rem; color:#dee7e7; font-weight:bold;">The Languages used for this design are HTML for the building, CSS for inline styling and Javascript for interaction and features.</br> This site is a one page design.</p>
+			</div>
+			<div>
+				 <img id="animated-img" style="height:500px;" src="https://res.cloudinary.com/dkgzuy5xo/image/upload/v1763749281/notepaded_edit_vfprns.png">
+
+  				<div class="bottom-line"></div>
+			</div>
+		</main>
+	</section>
+
+	<section style="height:87.5vh; padding:20px; display:flex; align-items:center; background:linear-gradient(45deg, #385F71, #717EC3);">
+		<div style="width:80%; margin: 0 auto; display:flex; align-items:center; justify-content:space-between;">
+		
+			<div class="sideline"></div>
+
+			<div>
+				<img id="animated-about" style="height:600px;" src="https://res.cloudinary.com/dkgzuy5xo/image/upload/v1763833887/for-about_mwkahz.png" alt="about us image section">
+			</div>
+
+			<div style="width:50%";>
+				<h2 style="color:#042A2B; font-size:2.5rem;">About This Page</h2>
+				<p style="font-size:18px; line-height:1.5; color:#FCFCFC;">This page was designed out of curiosity of trying different tools for web design, 											so the designer decided to explore the possiblities of using a NOTEPAD for the design, the design was done on a 							system which hasn't been configurated for programming, so this website is the output of the designers curiosity 							of trying out new tools.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<footer style="background:linear-gradient(45deg, #006494, #247BA0); color: #fff; text-align:center; padding:20px;">
+		<p>Copywrite @ <span id="year"></span>. Ogechukwu Macpherson Dieze. Professional Responsive Web Designer</p>
+	</footer>
+
+		
+		<script>
+			document.getElementById("year").textContent = new Date().getFullYear();
+
+			window.onload = function() {
+    			const img = document.getElementById("animated-img");
+			const imgAbout = document.getElementById("animated-about");
+
+    			img.classList.add("show");
+			imgAbout.classList.add("show");
+
+    			setTimeout(() => {
+        		img.classList.add("bounce");
+			imgAbout.classList.add("bounce");
+    			}, 900);
+		};
+		</script>
+	
+
+	</body>
+
+
+
+
+
+
+
+</html>
